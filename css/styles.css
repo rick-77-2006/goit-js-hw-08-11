@@ -1,27 +1,27 @@
-body{
-    background-color: #fff;
-    width: 1440px;
-        height: 696px;
-        box-sizing: border-box;
+body {
+  box-sizing: border-box;
+  margin: 0 auto;
 }
-.gallery-item{
-    list-style: none;
 
+li {
+  list-style-type: none;
 }
-.gallery-image:hover{
-    transform: scale(1.04);
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 0;
+  padding: 24px 156px;
+  justify-content: center;
 }
-.gallery{
-display: flex;
-    padding: 24px 156px;
-    flex-wrap: wrap;
-    
-    justify-content: center;
-    align-items: flex-start;
-    gap: 24px;
+
+.gallery-image {
+  width: 360px;
+  height: 200px;
+  flex-shrink: 0;
 }
-.gallery-image{
-    width: 360px;
-    height: 200px;
-   
+
+.gallery-image:hover {
+  transform: scale(1.04);
 }

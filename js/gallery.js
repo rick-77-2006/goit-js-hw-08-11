@@ -68,7 +68,7 @@ const gallery = document.querySelector(".gallery");
 
 const markup = images
   .map(({ preview, original, description }) => {
-      return `<li class="gallery-item">
+    return `<li class="gallery-item">
   <a class="gallery-link" href="${original}">
     <img
       class="gallery-image"
@@ -77,15 +77,16 @@ const markup = images
       alt="${description}"
     />
   </a>
-</li>`
-    }).join(""); 
+</li>`;
+  })
+  .join("");
 
 gallery.innerHTML = markup;
 
 let instance;
-gallery.addEventListener('click', function(event) {
- event.preventDefault();
-  if (event.target.tagName === 'IMG') {
+gallery.addEventListener("click", function (event) {
+  event.preventDefault();
+  if (event.target.tagName === "IMG") {
     const largeImage = event.target.dataset.source;
     console.log(largeImage);
 
@@ -94,7 +95,7 @@ gallery.addEventListener('click', function(event) {
       `<img width="1112" height="640" src="${originalSrc}">`
     );
     instance.show();
-  document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown);
   }
 });
 
@@ -103,6 +104,6 @@ function handleKeyDown(event) {
     instance.close();
   }
 }
-function onClose(instance){
+function onClose(instance) {
   instance.removeEventListener("keydown", handleKeyDown);
-};
+}
